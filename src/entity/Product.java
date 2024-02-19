@@ -2,36 +2,47 @@ package entity;
 
 public class Product {
 
+	private Integer cod;
 	private String name;
+	private String brand;
 	private double price;
 	private double dimensionProduct;
 	private double WeightProduct;
-	private String description;
-	private String exhibition;
-	private String category;
+	private Category category;
 	private int quantity;
 	
 	
-	
-	public Product(String name, double price, int quantity) {
+	public Product(Integer cod, String name, Category category, String brand, double price, int quantity) {
+		this.cod = cod;
 		this.name = name;
+		this.category = category;
+		this.brand = brand;
 		this.price = price;
 		this.quantity = quantity;
 	}
 
-	public Product( String name, double price, double dimensionProduct, 
-			double weightProduct, String description, String exhibition, String category, int quantity) {
+	public Product(Integer cod, String name, String brand, double price, double dimensionProduct, 
+			double weightProduct, Category category, int quantity) {
 
+		this.cod = cod;
 		this.name = name;
+		this.brand = brand;
 		this.price = price;
 		this.dimensionProduct = dimensionProduct;
 		WeightProduct = weightProduct;
-		this.description = description;
-		this.exhibition = exhibition;
 		this.category = category;
 		this.quantity = quantity;
 	}
 
+
+	public Integer getCod() {
+		return cod;
+	}
+	
+	public void setCod(Integer cod) {
+		this.cod =  cod;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -40,6 +51,14 @@ public class Product {
 		this.name = name;
 	}
 
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	
 	public double getPrice() {
 		return price;
 	}
@@ -63,28 +82,12 @@ public class Product {
 	public void setWeightProduct(double weightProduct) {
 		WeightProduct = weightProduct;
 	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getExhibition() {
-		return exhibition;
-	}
-
-	public void setExhibition(String exhibition) {
-		this.exhibition = exhibition;
-	}
-
-	public String getCategory() {
+	
+	public Category getCategory() {
 		return category;
 	}
 
-	public void setCategory(String category) {
+	public void setCategory(Category category) {
 		this.category = category;
 	}
 
